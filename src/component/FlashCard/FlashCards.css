@@ -1,0 +1,62 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  padding: 20px;
+}
+
+.flashcards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.flashcards div {
+  border: 1px solid #e7e7e7;
+  background-color: #d9cccc;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Adding smooth transition */
+}
+
+.flashcards p {
+  color: #9e9393;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+div.selected {
+  border: 1px solid #e03131;
+  background-color: rgb(34, 30, 30);
+  color: #fff;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 750px) {
+  .flashcards {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr)); /* Adjusting column size for smaller screens */
+    gap: 5px; /* Adjusting gap for smaller screens */
+  }
+
+  .flashcards div {
+    padding: 15px; /* Adjusting padding for smaller screens */
+  }
+
+  .flashcards p {
+    font-size: 14px; /* Adjusting font size for smaller screens */
+  }
+}
+
+/* Hover effect */
+.flashcards div:hover {
+  transform: translateY(-5px); /* Move the card up slightly on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Add box shadow on hover */
+}

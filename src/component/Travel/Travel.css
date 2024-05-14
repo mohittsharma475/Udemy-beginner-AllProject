@@ -1,0 +1,129 @@
+/* Base styles for the overall app */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+  
+  /* Logo styling */
+  .logo {
+    text-align: center;
+    font-size: 2.5em;
+    color: #007acc;
+    margin: 1em 0;
+  }
+  
+  /* Form styling */
+  .add-form {
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1.5em;
+    margin: 1em auto;
+    max-width: 600px;
+  }
+  
+  .add-form h6 {
+    margin-bottom: 1em;
+    font-size: 1.2em;
+  }
+  
+  .add-form select,
+  .add-form input,
+  .add-form button {
+    font-size: 1em;
+    padding: 0.5em;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .add-form input {
+    margin-left: 1em;
+    flex-grow: 1;
+  }
+  
+  .add-form button {
+    background-color: #007acc;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .add-form button:hover {
+    background-color: #005f8f;
+  }
+  
+  /* Packing list styling */
+  .packing-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 600px;
+  }
+  
+  .packing-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5em;
+    background-color: #f1f1f1;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 0.5em;
+  }
+  
+  .packing-list li button {
+    background: none;
+    border: none;
+    color: #d9534f; /* Red color for delete */
+    cursor: pointer;
+  }
+  
+  .packing-list li button:hover {
+    color: #a94442;
+  }
+  
+  /* Stats footer styling */
+  .footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #e6e6e6;
+    border-top: 1px solid #ccc;
+    color: #555;
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 768px) {
+    .add-form,
+    .packing-list {
+      padding: 0.5em;
+      max-width: 90%;
+    }
+  
+    .add-form input,
+    .add-form button {
+      font-size: 0.9em;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo {
+      font-size: 1.8em;
+    }
+  
+    .add-form h6 {
+      font-size: 1.1em;
+    }
+  
+    .add-form input,
+    .add-form select,
+    .add-form button {
+      padding: 0.3em;
+    }
+  
+    .packing-list li {
+      padding: 0.3em;
+    }
+  }
+  
