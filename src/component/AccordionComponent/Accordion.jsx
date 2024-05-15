@@ -18,6 +18,9 @@ const faqs = [
 ];
 
 function Accordian() {
+
+  const [currOpen,setCurrOpen] =  useState(null);
+
   return (
     <div>
       {faqs.map((faq, index) => {
@@ -26,35 +29,46 @@ function Accordian() {
             key={faq.title}
             num={index + 1}
             title={faq.title}
-            text={faq.text}
-          />
+            currOpen= {currOpen}
+            onOpen = {setCurrOpen}
+          >{faq.text}</AccordionItem>
         );
       })}
     </div>
   );
 }
 
-function AccordionItem({ num, title, text }) {
-  const [isOpen, setIsOpen] = useState(false);
+function AccordionItem({ num, title ,currOpen,onOpen,children}) {
+  // const [isOpen, setIsOpen] = useState(false);
+
+  const isOpen =num===currOpen;
+
+  function handleToggle(){
+    onOpen(isOpen?null:num);
+  }
+
   return (
     <div
       className={`item ${isOpen ? "open" : ""}`}
-      onClick={() => setIsOpen(!isOpen)}
+      onClick={handleToggle}
     >
       <p className="number">{num < 9 ? `0${num}` : num}</p>
       <p className="title">{title}</p>
       <p className="icon">{isOpen ? "-" : "+"}</p>
       {/* 
       <div className="content-box" style={isOpen?{}:{display:"none"}}>{text}</div> */}
-      {isOpen && <div className="content-box">{text}</div>}
+      {isOpen && <div className="content-box">{children}</div>}
     </div>
   );
 }
 
 AccordionItem.propTypes = {
   num: PropTypes.number.isRequired,
+  currOpen:PropTypes.number.isRequired,
+  onOpen:PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   text: PropTypes.string.isRequired,
+  children:PropTypes.string.isRequired
 };
 
 export default Accordian;

@@ -3,6 +3,7 @@ import { DateCounter } from "./component/DateCounter/DateCounter";
 import FlashCards from "./component/FlashCard/FlashCard";
 import { Form, Logo, PackingList, Stats } from "./component/Travel/Travel";
 import Accordian from "./component/AccordionComponent/Accordion";
+import TipCalculator from "./component/TipCalculator/TipCalculator";
 
 function App() {
   const [items, setItems] = useState([]);
@@ -30,6 +31,7 @@ function App() {
 
   return (
     <div>
+      <TipCalculator/>
       <Logo />
       <Accordian/>
       <DateCounter />
